@@ -1,0 +1,39 @@
+.modal_block {
+    width: 100%;
+    border: 2px solid #00cbff;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.modal_label_block {
+    display: block;
+    color: #aaaaaa;
+    
+}
+
+.modal_input_block {
+    display: block;
+    width: 100%;
+}
+
+.modal_label_radio {
+    margin-right: 30px;
+}
+
+.modal_block input {
+    margin: 10px 0px 30px;
+    padding: 5px;
+    border: 1px solid #ededed;
+    border-radius: 5px;
+}
+
+.modal_button {
+    background-color: transparent;
+    border: 1px solid #00cbff;
+    border-radius: 5px;
+    background-color: #00cbff;
+    color: #fff;
+    padding: 5px 20px;
+    margin-right: 5px;
+
+}

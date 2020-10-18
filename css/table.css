@@ -1,0 +1,67 @@
+table {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+table tr {
+    border-bottom: 1px solid #ededed;
+}
+
+table tr:last-of-type {
+    border-bottom: none;
+}
+
+table td {
+    padding:15px 20px 15px 0px;
+    color: #717171;
+}
+
+.td_center {
+    text-align: center;
+}
+
+                        /* URGENCY */
+
+.td_urgency {
+    font-size: 12px;
+}
+
+.td_urgent {
+    color: #ff0000;
+}
+
+.td_not_urgent {
+    color: #eddb00;
+}
+
+.td_termless {
+    color: #06a300;
+}
+
+                        /* COMPLETED */
+
+.td_completed {
+    color: #06a300;
+}
+
+                        /* DELETED */
+
+.td_deleted {
+    color: #ff0000;
+}
+
+                        /* DESCRIPTION */
+
+.td_silver {
+    color: #d4d4d4;
+}
+
+
+
+.add_new_task {
+    display: block;
+    border: none;
+    color: #00cbff;
+    background-color: transparent;
+    padding: 5px 0px;
+}
