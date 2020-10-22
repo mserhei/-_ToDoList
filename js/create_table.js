@@ -81,6 +81,26 @@ const createTable = function () {
 
     }
 
+    // ON COMPLETED CLICK
+
+    const allTdCompleted = document.querySelectorAll(`.td_completed`);
+
+    for (let i = 0; i < allTdCompleted.length; i++) {
+        allTdCompleted[i].addEventListener(`click`, () => {
+        allTdCompleted[i].classList.toggle(`green`);
+        allTdCompleted[i].classList.toggle(`silver`);
+    })}
+
+    // ON DELETED CLICK
+
+    const allTdDeleted = document.querySelectorAll(`.td_deleted`);
+
+    for (let i = 0; i < allTdDeleted.length; i++) {
+        allTdDeleted[i].addEventListener(`click`, () => {
+        allTdDeleted[i].classList.toggle(`red`);
+        allTdDeleted[i].classList.toggle(`silver`);
+    })}
+
 }
 
 createTable();
