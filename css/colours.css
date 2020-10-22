@@ -1,11 +1,19 @@
-.red_color {
+.red {
     color: #ff1000;
 }
 
-.yellow_color {
+.yellow {
     color: #ffde00;
 }
 
-.green_color {
+.green {
     color: #00ce06;
+}
+
+.silver {
+    color: #d4d4d4;
+}
+
+.black {
+    color: #000;
 }

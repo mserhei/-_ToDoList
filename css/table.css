@@ -40,21 +40,19 @@ table td {
 
                         /* COMPLETED */
 
-.td_completed {
-    color: #06a300;
+.td_deleted {
+    cursor: pointer;
 }
 
                         /* DELETED */
 
-.td_deleted {
-    color: #ff0000;
+.td_completed {
+    cursor: pointer;
 }
 
                         /* DESCRIPTION */
 
-.td_silver {
-    color: #d4d4d4;
-}
+
 
 
 

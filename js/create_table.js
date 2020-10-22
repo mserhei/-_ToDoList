@@ -2,6 +2,12 @@ const mainTable = document.querySelector(`.main_table`);
 console.log(mainTable);
 
 const createTable = function () {
+
+    if (document.querySelector(`table`)) {
+        document.querySelector(`table`).remove()
+    }
+
+
     const tableTag = document.createElement('table');
     mainTable.append(tableTag);
 
@@ -36,37 +42,38 @@ const createTable = function () {
 
         let tdTagCompleted = document.createElement(`td`);
         if (initialData[i].completed === true) {
-            tdTagCompleted.classList.add(`td_completed`, 'td_center');
-            tdTagCompleted.innerText = `completed`;
+            tdTagCompleted.classList.add(`td_completed`, `green`, 'td_center');
+
         } else {
-            tdTagCompleted.classList.add(`td_silver`, 'td_center');
-            tdTagCompleted.innerText = `not completed`;
+            tdTagCompleted.classList.add(`td_completed`, `silver`, 'td_center');
         }
 
+        tdTagCompleted.innerText = `completed`;
         trTag.append(tdTagCompleted);
 
         // DELETED
 
         let tdTagDeleted = document.createElement(`td`);
+
         if (initialData[i].deleted === true) {
-            tdTagDeleted.classList.add(`td_deleted`, 'td_center');
-            tdTagDeleted.innerText = `deleted`;
+            tdTagDeleted.classList.add(`td_deleted`, `red`, 'td_center');
+
         } else {
-            tdTagDeleted.classList.add(`td_silver`, 'td_center');
-            tdTagDeleted.innerText = `not deleted`;
+            tdTagDeleted.classList.add(`td_deleted`, `silver`, 'td_center');
         }
 
+        tdTagDeleted.innerText = `deleted`;
         trTag.append(tdTagDeleted);
 
         // DESCRIPTION
 
         let tdTagDescription = document.createElement(`td`);
         if (initialData[i].description) {
-            tdTagDescription.classList.add(`td_decription_exists`, 'td_center');
+            tdTagDescription.classList.add(`black`, 'td_center');
             tdTagDescription.innerText = `description`;
             trTag.append(tdTagDescription);
         } else {
-            tdTagDescription.classList.add(`td_silver`, 'td_center');
+            tdTagDescription.classList.add(`silver`, 'td_center');
             tdTagDescription.innerText = `no description`;
             trTag.append(tdTagDescription);
         }

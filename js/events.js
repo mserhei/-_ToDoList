@@ -10,23 +10,79 @@ const modalDescription = document.querySelector(`.modal_description`)
 
 addNewTask.addEventListener(`click`, () => {
     modalBlock.style.display = `block`;
+    addNewTask.style.display = `none`;
 })
 
 modalButtonCancel.addEventListener(`click`, () => {
     modalBlock.style.display = `none`;
+    addNewTask.style.display = `block`;
 })
 
-// MODAL WINDOW SAVE NEW TASK
+// MODAL WINDOW SAVE NEW TASK (need to end)
 
-const newTaskObject = {};
+
 
 modalButtonSave.addEventListener(`click`, () => {
 
-    // newTaskObject.id = initialData.length;
-    // newTaskObject.name = modalName.value;
-    // newTaskObject.description = modalDescription.value;
-    // newTaskObject.urgency = 0;
-    // newTaskObject.completed = false;
-    // newTaskObject.deleted = false;
+    const newTaskObject = {};
+
+    newTaskObject.id = initialData.length;
+    newTaskObject.name = modalName.value;
+    newTaskObject.description = modalDescription.value;
+
+    const radioUrgent = document.querySelector(`#radio_urgent`);
+    const radioNotUrgent = document.querySelector(`#radio_not_urgent`);
+    const radioTermless = document.querySelector(`#radio_termless`);
+
+    if (radioUrgent.checked) {
+        newTaskObject.urgency = 0;
+    }
+    if (radioNotUrgent.checked) {
+        newTaskObject.urgency = 1;
+    }
+    if (radioTermless.checked) {
+        newTaskObject.urgency = 2;
+    }
+
+    newTaskObject.completed = false;
+    newTaskObject.deleted = false;
+
+    initialData.push(newTaskObject);
+
+    createTable();
+
+    modalName.value = ``;
+    modalDescription.value = ``;
+
+    modalBlock.style.display = `none`;
+    addNewTask.style.display = `block`;
 })
+
+// COMPLETED CLICK
+
+const allTdCompleted = document.querySelectorAll(`.td_completed`);
+
+for (let i = 0; i < allTdCompleted.length; i++) {
+
+    allTdCompleted[i].addEventListener(`click`, () => {
+
+        allTdCompleted[i].classList.toggle(`green`);
+        allTdCompleted[i].classList.toggle(`silver`);
+    })
+}
+
+// DELETED CLICK
+
+const allTdDeleted = document.querySelectorAll(`.td_deleted`);
+
+for (let i = 0; i < allTdDeleted.length; i++) {
+    
+    allTdDeleted[i].addEventListener(`click`, () => {
+
+        allTdDeleted[i].classList.toggle(`red`);
+        allTdDeleted[i].classList.toggle(`silver`);
+    })
+}
+
+
 
