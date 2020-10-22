@@ -41,10 +41,10 @@
                 <button class="add_new_task">add new task</button>
                 <div class="modal_block">
                     <label class="modal_label_block">Enter task name:</label>
-                        <input class="modal_input_block" type="textarea" name="task_name" id="task_name">
+                        <input class="modal_input_block modal_name" type="textarea" name="task_name" id="task_name">
 
                     <label class="modal_label_block">Enter task description:</label>
-                        <input class="modal_input_block" type="textarea" name="task_description" id="task_description">
+                        <input class="modal_input_block modal_description" type="textarea" name="task_description" id="task_description">
 
                     <label class="modal_label_block">Select urgency:</label>
                         <input type="radio" name="select_urgency" id="radio_urgent" checked>
@@ -55,8 +55,8 @@
                             <label class="modal_label_radio green_color" for="radio_termless">termless</label>
                         <br>
 
-                    <button class="modal_button">cancel</button>
-                    <button class="modal_button">save</button>
+                    <button class="modal_button modal_button_cancel">cancel</button>
+                    <button class="modal_button modal_button_save">save</button>
 
 
 
@@ -70,6 +70,8 @@
 
         <script src="js/initial_data.js"></script>
         <script src="js/index.js"></script>
+        <script src="js/events.js"></script>
+
         <script src="js/create_table.js"></script>
 
     </body>

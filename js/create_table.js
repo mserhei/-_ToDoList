@@ -1,5 +1,5 @@
 const mainTable = document.querySelector(`.main_table`);
-console.log (mainTable);
+console.log(mainTable);
 
 const createTable = function () {
     const tableTag = document.createElement('table');
@@ -9,53 +9,69 @@ const createTable = function () {
         let trTag = document.createElement(`tr`);
         tableTag.prepend(trTag);
 
+        // URGENCY
+
         let tdTagUrgency = document.createElement(`td`);
-        if (initialData[i].urgency === `urgent`) {
-            tdTagUrgency.classList.add(`td_urgency`,`td_urgent`,'td_center');
-        }else if (initialData[i].urgency === `not urgent`) {
-            tdTagUrgency.classList.add(`td_urgency`,`td_not_urgent`,'td_center');
+        if (initialData[i].urgency === 0) {
+            tdTagUrgency.classList.add(`td_urgency`, `td_urgent`, 'td_center');
+            tdTagUrgency.innerText = `urgent`;
+        } else if (initialData[i].urgency === 1) {
+            tdTagUrgency.classList.add(`td_urgency`, `td_not_urgent`, 'td_center');
+            tdTagUrgency.innerText = `not urgent`;
         } else {
-            tdTagUrgency.classList.add(`td_urgency`,`td_termless`,'td_center');
+            tdTagUrgency.classList.add(`td_urgency`, `td_termless`, 'td_center');
+            tdTagUrgency.innerText = `termless`;
         }
-        
-        tdTagUrgency.innerText = `${initialData[i].urgency}`;
+
         trTag.append(tdTagUrgency);
-    
+
+        // NAME
+
         let tdTagName = document.createElement(`td`);
         tdTagName.classList.add(`td_name`);
         tdTagName.innerText = `${initialData[i].name}`;
         trTag.append(tdTagName);
 
+        // COMPLETED
+
         let tdTagCompleted = document.createElement(`td`);
-        if (initialData[i].completed === `completed`) {
-            tdTagCompleted.classList.add(`td_completed`,'td_center');
+        if (initialData[i].completed === true) {
+            tdTagCompleted.classList.add(`td_completed`, 'td_center');
+            tdTagCompleted.innerText = `completed`;
         } else {
-            tdTagCompleted.classList.add(`td_silver`,'td_center');
+            tdTagCompleted.classList.add(`td_silver`, 'td_center');
+            tdTagCompleted.innerText = `not completed`;
         }
-        tdTagCompleted.innerText = `${initialData[i].completed}`;
+
         trTag.append(tdTagCompleted);
 
+        // DELETED
+
         let tdTagDeleted = document.createElement(`td`);
-        if (initialData[i].deleted === `deleted`) {
-            tdTagDeleted.classList.add(`td_deleted`,'td_center');
+        if (initialData[i].deleted === true) {
+            tdTagDeleted.classList.add(`td_deleted`, 'td_center');
+            tdTagDeleted.innerText = `deleted`;
         } else {
-            tdTagDeleted.classList.add(`td_silver`,'td_center');
+            tdTagDeleted.classList.add(`td_silver`, 'td_center');
+            tdTagDeleted.innerText = `not deleted`;
         }
-        tdTagDeleted.innerText = `${initialData[i].deleted}`;
+
         trTag.append(tdTagDeleted);
+
+        // DESCRIPTION
 
         let tdTagDescription = document.createElement(`td`);
         if (initialData[i].description) {
-            tdTagDescription.classList.add(`td_decription_exists`,'td_center');
+            tdTagDescription.classList.add(`td_decription_exists`, 'td_center');
             tdTagDescription.innerText = `description`;
             trTag.append(tdTagDescription);
         } else {
-            tdTagDescription.classList.add(`td_silver`,'td_center');
+            tdTagDescription.classList.add(`td_silver`, 'td_center');
             tdTagDescription.innerText = `no description`;
             trTag.append(tdTagDescription);
         }
-        
-        
+
+
     }
 
 }
