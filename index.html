@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/table.css">
@@ -15,65 +18,69 @@
     <title>ToDo List</title>
 
 </head>
-    <body>
-        <header>
-            <h1>ToDo List</h1>
-        </header>
 
-        <main>
-            <div class="main_navigation">
-                <span>Tasks:</span>
-                <ul>
-                    <li>All</li>
-                    <li>Completed</li>
-                    <li>Deleted</li>
-                </ul>
+<body>
+    <header>
+        <h1>ToDo List</h1>
+    </header>
 
-                <span>Urgency:</span>
-                <ul>
+    <main>
+        <div class="main_navigation">
+            <span>Tasks:</span>
+            <ul>
+                <li>All</li>
+                <li>Completed</li>
+                <li>Deleted</li>
+            </ul>
+
+            <span>Urgency:</span>
+            <ul>
+                <li>All</li>
                 <li>Urgent</li>
                 <li>Not Urgent</li>
                 <li>Termless</li>
-                </ul>
+            </ul>
+        </div>
+
+        <div class="main_table">
+            <button class="add_new_task">add new task</button>
+            <div class="modal_block">
+                <label class="modal_label_block">Enter task name:</label>
+                <input class="modal_input_block modal_name" type="textarea" name="task_name" id="task_name">
+
+                <label class="modal_label_block">Enter task description:</label>
+                <input class="modal_input_block modal_description" type="textarea" name="task_description"
+                    id="task_description">
+
+                <label class="modal_label_block">Select urgency:</label>
+                <input type="radio" name="select_urgency" id="radio_urgent" checked>
+                <label class="modal_label_radio red_color" for="radio_urgent">urgent</label>
+                <input type="radio" name="select_urgency" id="radio_not_urgent">
+                <label class="modal_label_radio yellow_color" for="radio_not_urgent">not urgent</label>
+                <input type="radio" name="select_urgency" id="radio_termless">
+                <label class="modal_label_radio green_color" for="radio_termless">termless</label>
+                <br>
+
+                <button class="modal_button modal_button_cancel">cancel</button>
+                <button class="modal_button modal_button_save">save</button>
+
+
+
             </div>
+        </div>
+    </main>
 
-            <div class="main_table">
-                <button class="add_new_task">add new task</button>
-                <div class="modal_block">
-                    <label class="modal_label_block">Enter task name:</label>
-                        <input class="modal_input_block modal_name" type="textarea" name="task_name" id="task_name">
+    <footer>
+        Serhei Mikhailov 2020
+    </footer>
 
-                    <label class="modal_label_block">Enter task description:</label>
-                        <input class="modal_input_block modal_description" type="textarea" name="task_description" id="task_description">
-
-                    <label class="modal_label_block">Select urgency:</label>
-                        <input type="radio" name="select_urgency" id="radio_urgent" checked>
-                            <label class="modal_label_radio red_color" for="radio_urgent">urgent</label>
-                        <input type="radio" name="select_urgency" id="radio_not_urgent">
-                            <label class="modal_label_radio yellow_color" for="radio_not_urgent">not urgent</label>
-                        <input type="radio" name="select_urgency" id="radio_termless">
-                            <label class="modal_label_radio green_color" for="radio_termless">termless</label>
-                        <br>
-
-                    <button class="modal_button modal_button_cancel">cancel</button>
-                    <button class="modal_button modal_button_save">save</button>
+    <script src="js/initial_data.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/create_table.js"></script>
+    <script src="js/events.js"></script>
 
 
 
-                </div>
-            </div>
-        </main>
+</body>
 
-        <footer>
-            Serhei Mikhailov 2020
-        </footer>
-
-        <script src="js/initial_data.js"></script>
-        <script src="js/index.js"></script>
-        <script src="js/create_table.js"></script>
-        <script src="js/events.js"></script>
-
-        
-
-    </body>
 </html>

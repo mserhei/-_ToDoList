@@ -23,6 +23,7 @@ main {
                         /* MAIN / NAVIGATION */
 
 .main_navigation {
+    width:200px;
     margin: 20px;
     border-right: 1px solid #ededed;
 }
@@ -46,7 +47,7 @@ main {
 }
 
 .main_navigation li:hover{
-    color:#ffb34f;
+    color:#00cbff;
 }
 
                         /* MAIN / TABLE */
