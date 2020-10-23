@@ -1,3 +1,9 @@
+                        /* ALL */
+
+input::placeholder {
+    color: #e0e0e0;
+}
+
                         /* HEADER */
 
 header {
@@ -48,6 +54,16 @@ main {
 
 .main_navigation li:hover{
     color:#00cbff;
+}
+
+.show_button {
+    margin-top: 30px;
+    padding: 3px 25px;
+    border: 2px solid #227aff;
+    border-radius: 5px;
+    background-color: #227aff;
+    color: #fff;
+    
 }
 
                         /* MAIN / TABLE */

@@ -28,29 +28,52 @@
         <div class="main_navigation">
             <span>Tasks:</span>
             <ul>
-                <li>All</li>
-                <li>Completed</li>
-                <li>Deleted</li>
+                <li>
+                    <input type="radio" id="tasks_all" name="tasks" class="all_tasks_radio" checked>
+                    <label for="tasks_all">All</label>
+                </li>
+                <li>
+                    <input type="radio" id="tasks_completed" name="tasks" class="all_tasks_radio">
+                    <label for="tasks_completed">Completed</label>
+                </li>
+                <li>
+                    <input type="radio" id="tasks_deleted" name="tasks" class="all_tasks_radio">
+                    <label for="tasks_deleted">Deleted</label>
+                </li>
             </ul>
 
             <span>Urgency:</span>
             <ul>
-                <li>All</li>
-                <li>Urgent</li>
-                <li>Not Urgent</li>
-                <li>Termless</li>
+                <li>
+                    <input type="radio" id="urgency_all" name="urgency" class="all_urgency_radio">
+                    <label for="urgency_all">All</label>
+                </li>
+                <li>
+                    <input type="radio" id="urgency_urgent" name="urgency" class="all_urgency_radio">
+                    <label for="urgency_urgent">Urgent</label>
+                </li>
+                <li>
+                    <input type="radio" id="urgency_not_urgent" name="urgency" class="all_urgency_radio">
+                    <label for="urgency_not_urgent">Not urgent</label>
+                </li>
+                <li>
+                    <input type="radio" id="urgency_termless" name="urgency" class="all_urgency_radio" checked>
+                    <label for="urgency_termless">Termless</label>
+                </li>
             </ul>
+
+            <button class="show_button">Show</button>
         </div>
 
         <div class="main_table">
             <button class="add_new_task">add new task</button>
             <div class="modal_block">
                 <label class="modal_label_block">Enter task name:</label>
-                <input class="modal_input_block modal_name" type="textarea" name="task_name" id="task_name">
+                <input class="modal_input_block modal_name" type="textarea" name="task_name" id="task_name" placeholder="enter task name here">
 
                 <label class="modal_label_block">Enter task description:</label>
                 <input class="modal_input_block modal_description" type="textarea" name="task_description"
-                    id="task_description">
+                    id="task_description" placeholder="enter description here">
 
                 <label class="modal_label_block">Select urgency:</label>
                 <input type="radio" name="select_urgency" id="radio_urgent" checked>

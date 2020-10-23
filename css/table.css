@@ -58,16 +58,9 @@ table td {
 
 .add_new_task {
     display: block;
-    border: 2px solid  #ababab;
+    border: 2px solid  #227aff;
     border-radius: 5px;
-    color:  #ababab;
+    color:  #227aff;
     background-color: transparent;
     padding: 5px 20px;
 }
-
-.add_new_task:hover {
-    border: 2px solid  #00cbff;
-    border-radius: 5px;
-    color:  #00cbff;
-}
-

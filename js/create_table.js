@@ -1,3 +1,76 @@
+// create a new array
+
+let allTasksRadio = document.querySelectorAll(`.all_tasks_radio`);
+let allTasksRadioCheckedIndex;
+
+for (let i = 0; i < allTasksRadio.length; i++) {
+    if (allTasksRadio[i].checked) {
+        allTasksRadioCheckedIndex = i;
+    }
+}
+
+let allUrgentRadio = document.querySelectorAll(`.all_urgency_radio`);
+let allUrgentRadioCheckedIndex;
+
+for (let i = 0; i < allUrgentRadio.length; i++) {
+    if (allUrgentRadio[i].checked) {
+        allUrgentRadioCheckedIndex = i;
+    }
+}
+
+// function for new array
+
+let arrAfterTasksChecked = [];
+
+for (let i = 0; i < initialData.length; i++) {
+    if (allTasksRadioCheckedIndex === 0) {
+        arrAfterTasksChecked = initialData;
+    }
+    if (allTasksRadioCheckedIndex === 1) {
+        if (initialData[i].completed === true) {
+            arrAfterTasksChecked.push(initialData[i]);
+        }
+    }
+    if (allTasksRadioCheckedIndex === 2) {
+        if (initialData[i].deleted === true) {
+            arrAfterTasksChecked.push(initialData[i]);
+        }
+    }
+}
+
+console.log (arrAfterTasksChecked);
+
+
+
+let arrAfterUrgencyChecked = [];
+
+for(let i = 0; i < arrAfterTasksChecked.length; i++) {
+    if (allUrgentRadioCheckedIndex === 0) {
+        arrAfterUrgencyChecked = arrAfterTasksChecked;
+    }
+    if (allUrgentRadioCheckedIndex === 1) {
+        if (arrAfterTasksChecked[i].urgency === 0) {
+            arrAfterUrgencyChecked.push(arrAfterTasksChecked[i]);
+        }
+    }
+    if (allUrgentRadioCheckedIndex === 2) {
+        if (arrAfterTasksChecked[i].urgency === 1) {
+            arrAfterUrgencyChecked.push(arrAfterTasksChecked[i]);
+        }
+    }
+    if (allUrgentRadioCheckedIndex === 3) {
+        if (arrAfterTasksChecked[i].urgency === 2) {
+            arrAfterUrgencyChecked.push(arrAfterTasksChecked[i]);
+        }
+    }
+}
+
+
+
+console.log (arrAfterUrgencyChecked);
+
+//////////////////////////////
+
 const mainTable = document.querySelector(`.main_table`);
 console.log(mainTable);
 
@@ -6,6 +79,17 @@ const createTable = function () {
     if (document.querySelector(`table`)) {
         document.querySelector(`table`).remove()
     }
+
+
+
+
+
+    
+
+
+
+
+
 
 
     const tableTag = document.createElement('table');

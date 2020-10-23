@@ -1,3 +1,5 @@
+const showButton = document.querySelector(`.show_button`);
+
 const addNewTask = document.querySelector(`.add_new_task`)
 const modalBlock = document.querySelector(`.modal_block`)
 const modalButtonCancel = document.querySelector(`.modal_button_cancel`)
@@ -5,6 +7,12 @@ const modalButtonSave = document.querySelector(`.modal_button_save`)
 
 const modalName = document.querySelector(`.modal_name`)
 const modalDescription = document.querySelector(`.modal_description`)
+
+// SHOW BUTTON CREATE TABLE
+
+showButton.addEventListener(`click`, () => {
+    createTable()
+})
 
 // MODAL WINDOW APPEARS AND DISAPPEARS (WITHOUT SAVING)
 
