@@ -11,11 +11,7 @@ const createTable = function () {
         document.querySelector(`table`).remove()
     }
 
-
-
-
-
-        // create a new array
+    //  CREATE TASKS ARRAY, WHEN CONDITIONS IS CHECKED
 
     let allTasksRadio = document.querySelectorAll(`.all_tasks_radio`);
     let allTasksRadioCheckedIndex;
@@ -35,8 +31,6 @@ const createTable = function () {
         }
     }
 
-    // function for new array
-
     let arrAfterTasksChecked = [];
 
     for (let i = 0; i < initialData.length; i++) {
@@ -55,13 +49,9 @@ const createTable = function () {
         }
     }
 
-    console.log (arrAfterTasksChecked);
-
-
-
     let arrAfterUrgencyChecked = [];
 
-    for(let i = 0; i < arrAfterTasksChecked.length; i++) {
+    for (let i = 0; i < arrAfterTasksChecked.length; i++) {
         if (allUrgentRadioCheckedIndex === 0) {
             arrAfterUrgencyChecked = arrAfterTasksChecked;
         }
@@ -82,22 +72,14 @@ const createTable = function () {
         }
     }
 
-
-
-    console.log (arrAfterUrgencyChecked);
-
-
-
-
-
-
+    // CREATE A TABLE
 
     const tableTag = document.createElement('table');
     mainTable.append(tableTag);
 
     for (let i = 0; i < arrAfterUrgencyChecked.length; i++) {
         let trTag = document.createElement(`tr`);
-        tableTag.prepend(trTag);
+        tableTag.append(trTag);
 
         // URGENCY
 
@@ -171,9 +153,17 @@ const createTable = function () {
 
     for (let i = 0; i < allTdCompleted.length; i++) {
         allTdCompleted[i].addEventListener(`click`, () => {
-        allTdCompleted[i].classList.toggle(`green`);
-        allTdCompleted[i].classList.toggle(`silver`);
-    })}
+            allTdCompleted[i].classList.toggle(`green`);
+            allTdCompleted[i].classList.toggle(`silver`);
+
+            if (arrAfterUrgencyChecked[i].completed === true) {
+                initialData[arrAfterUrgencyChecked[i].id].completed = false
+
+            } else {
+                initialData[arrAfterUrgencyChecked[i].id].completed = true
+            }
+        })
+    }
 
     // ON DELETED CLICK
 
@@ -181,9 +171,17 @@ const createTable = function () {
 
     for (let i = 0; i < allTdDeleted.length; i++) {
         allTdDeleted[i].addEventListener(`click`, () => {
-        allTdDeleted[i].classList.toggle(`red`);
-        allTdDeleted[i].classList.toggle(`silver`);
-    })}
+            allTdDeleted[i].classList.toggle(`red`);
+            allTdDeleted[i].classList.toggle(`silver`);
+
+            if (arrAfterUrgencyChecked[i].deleted === true) {
+                initialData[arrAfterUrgencyChecked[i].id].deleted = false
+
+            } else {
+                initialData[arrAfterUrgencyChecked[i].id].deleted = true
+            }
+        })
+    }
 
 }
 

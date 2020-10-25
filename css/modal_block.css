@@ -1,7 +1,7 @@
 .modal_block {
     display: none;
     width: 100%;
-    border: 2px solid #00cbff;
+    border: 2px solid #227aff;
     border-radius: 8px;
     padding: 20px;
 }
@@ -30,9 +30,9 @@
 
 .modal_button {
     background-color: transparent;
-    border: 1px solid #00cbff;
+    border: 1px solid #227aff;
     border-radius: 5px;
-    background-color: #00cbff;
+    background-color: #227aff;
     color: #fff;
     padding: 5px 20px;
     margin-right: 5px;

@@ -14,8 +14,6 @@ header {
     background: rgb(113,113,113);
     background: linear-gradient(90deg, rgba(113,113,113,1) 0%, rgba(142,142,142,1) 100%);
     color: #fff;
-    border-bottom:2px solid #00cbff;
-    border-top:2px solid #00cbff;
 }
 
                         /* MAIN */
@@ -81,6 +79,5 @@ footer {
     background: rgb(113,113,113);
     background: linear-gradient(90deg, rgba(113,113,113,1) 0%, rgba(142,142,142,1) 100%);
     color: #fff;
-    border-top:2px solid #00cbff;
-    border-bottom:2px solid #00cbff;
+
 }
