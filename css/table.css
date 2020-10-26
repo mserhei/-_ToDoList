@@ -1,3 +1,5 @@
+                        /* MAIN */
+
 table {
     margin-top: 20px;
     font-size: 20px;
@@ -51,6 +53,12 @@ table td {
 }
 
                         /* DESCRIPTION */
+
+.td_description {
+    cursor: pointer;
+}
+
+                        /* BUTTON ADD NEW TASK */
 
 .add_new_task {
     display: block;

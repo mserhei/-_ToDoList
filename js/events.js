@@ -24,11 +24,12 @@ addNewTask.addEventListener(`click`, () => {
 modalButtonCancel.addEventListener(`click`, () => {
     modalBlock.style.display = `none`;
     addNewTask.style.display = `block`;
+
+    modalName.value = ``;
+    modalDescription.value = ``;
 })
 
-// MODAL WINDOW SAVE NEW TASK (need to end)
-
-
+// MODAL WINDOW SAVE NEW TASK
 
 modalButtonSave.addEventListener(`click`, () => {
 
@@ -66,12 +67,6 @@ modalButtonSave.addEventListener(`click`, () => {
     addNewTask.style.display = `block`;
 
 })
-
-// COMPLETED CLICK
-
-
-
-// DELETED CLICK
 
 
 
