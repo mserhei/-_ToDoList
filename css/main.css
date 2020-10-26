@@ -26,6 +26,8 @@ main {
 
                         /* MAIN / NAVIGATION */
 
+
+                        
 .main_navigation {
     width:200px;
     margin: 20px;
@@ -79,5 +81,5 @@ footer {
     background: rgb(113,113,113);
     background: linear-gradient(90deg, rgba(113,113,113,1) 0%, rgba(142,142,142,1) 100%);
     color: #fff;
-
 }
+

@@ -29,12 +29,10 @@
 }
 
 .modal_button {
-    background-color: transparent;
     border: 1px solid #227aff;
     border-radius: 5px;
     background-color: #227aff;
     color: #fff;
     padding: 5px 20px;
     margin-right: 5px;
-
 }

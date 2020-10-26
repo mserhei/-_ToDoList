@@ -135,11 +135,11 @@ const createTable = function () {
 
         let tdTagDescription = document.createElement(`td`);
         if (arrAfterUrgencyChecked[i].description) {
-            tdTagDescription.classList.add(`black`, 'td_center');
+            tdTagDescription.classList.add(`black`, 'td_center', 'td_description');
             tdTagDescription.innerText = `description`;
             trTag.append(tdTagDescription);
         } else {
-            tdTagDescription.classList.add(`silver`, 'td_center');
+            tdTagDescription.classList.add(`silver`, 'td_center', 'td_description');
             tdTagDescription.innerText = `no description`;
             trTag.append(tdTagDescription);
         }
@@ -180,6 +180,32 @@ const createTable = function () {
             } else {
                 initialData[arrAfterUrgencyChecked[i].id].deleted = true
             }
+        })
+    }
+
+    // ON DESCRIPTION CLICK
+
+    const allTdDescriprion = document.querySelectorAll(`.td_description`);
+
+    for (let i = 0; i < allTdDescriprion.length; i++) {
+        allTdDescriprion[i].addEventListener(`click`, () => {
+
+            const trRowBaseDescription = allTdDescriprion[i].parentElement;
+            const trRowInsertDescription = document.createElement('tr');
+
+            trRowBaseDescription.after(trRowInsertDescription);
+
+            trRowInsertDescription.innerHTML = 
+            `<td colspan="5">
+                <div class="div_insert_description">
+                    <input class="input_insert_description" type="textarea" placeholder="insert description here">
+                    <button class="button_insert_description">cancel</button>
+                    <button class="button_insert_description">save</button>
+                </div>
+            </td>`;
+
+            let textInsertDescription = document.querySelector(`.input_insert_description`);
+            textInsertDescription.value = initialData[arrAfterUrgencyChecked[i].id].description;
         })
     }
 
