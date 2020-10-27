@@ -35,7 +35,7 @@ modalButtonSave.addEventListener(`click`, () => {
 
     const newTaskObject = {};
 
-    newTaskObject.id = initialData.length;
+    newTaskObject.id = lsDataOut.length;
     newTaskObject.name = modalName.value;
     newTaskObject.description = modalDescription.value;
 
@@ -56,7 +56,9 @@ modalButtonSave.addEventListener(`click`, () => {
     newTaskObject.completed = false;
     newTaskObject.deleted = false;
 
-    initialData.push(newTaskObject);
+    lsDataOut.push(newTaskObject);
+
+    updateLocalStorage ();
 
     createTable();
 
@@ -65,7 +67,6 @@ modalButtonSave.addEventListener(`click`, () => {
 
     modalBlock.style.display = `none`;
     addNewTask.style.display = `block`;
-
 })
 
 

@@ -1,5 +1,4 @@
 const mainTable = document.querySelector(`.main_table`);
-console.log(mainTable);
 
 const createTable = function () {
 
@@ -7,7 +6,7 @@ const createTable = function () {
         document.querySelector(`table`).remove()
     }
 
-    //  CREATE TASKS ARRAY, WHEN CONDITIONS IS CHECKED
+    //  CREATE TASKS ARRAY, WHEN CONDITIONS ARE CHECKED
 
     let allTasksRadio = document.querySelectorAll(`.all_tasks_radio`);
     let allTasksRadioCheckedIndex;
@@ -29,23 +28,23 @@ const createTable = function () {
 
     let arrAfterTasksChecked = [];
 
-    for (let i = 0; i < initialData.length; i++) {
+    for (let i = 0; i < lsDataOut.length; i++) {
         if (allTasksRadioCheckedIndex === 0) {
-            arrAfterTasksChecked = initialData;
+            arrAfterTasksChecked = lsDataOut;
         }
         if (allTasksRadioCheckedIndex === 1) {
-            if (initialData[i].completed === false) {
-                arrAfterTasksChecked.push(initialData[i]);
+            if (lsDataOut[i].completed === false) {
+                arrAfterTasksChecked.push(lsDataOut[i]);
             }
         }
         if (allTasksRadioCheckedIndex === 2) {
-            if (initialData[i].completed === true) {
-                arrAfterTasksChecked.push(initialData[i]);
+            if (lsDataOut[i].completed === true) {
+                arrAfterTasksChecked.push(lsDataOut[i]);
             }
         }
         if (allTasksRadioCheckedIndex === 3) {
-            if (initialData[i].deleted === true) {
-                arrAfterTasksChecked.push(initialData[i]);
+            if (lsDataOut[i].deleted === true) {
+                arrAfterTasksChecked.push(lsDataOut[i]);
             }
         }
     }
@@ -141,11 +140,9 @@ const createTable = function () {
             trTag.append(tdTagDescription);
         } else {
             tdTagDescription.classList.add(`silver`, 'td_center', 'td_description');
-            tdTagDescription.innerText = `no description`;
+            tdTagDescription.innerText = `description`;
             trTag.append(tdTagDescription);
         }
-
-
     }
 
     // ON COMPLETED CLICK
@@ -158,10 +155,10 @@ const createTable = function () {
             allTdCompleted[i].classList.toggle(`silver`);
 
             if (arrAfterUrgencyChecked[i].completed === true) {
-                initialData[arrAfterUrgencyChecked[i].id].completed = false
+                lsDataOut[arrAfterUrgencyChecked[i].id].completed = false
 
             } else {
-                initialData[arrAfterUrgencyChecked[i].id].completed = true
+                lsDataOut[arrAfterUrgencyChecked[i].id].completed = true
             }
 
             createTable();
@@ -178,9 +175,9 @@ const createTable = function () {
             allTdDeleted[i].classList.toggle(`silver`);
 
             if (arrAfterUrgencyChecked[i].deleted === true) {
-                initialData[arrAfterUrgencyChecked[i].id].deleted = false
+                lsDataOut[arrAfterUrgencyChecked[i].id].deleted = false
             } else {
-                initialData[arrAfterUrgencyChecked[i].id].deleted = true
+                lsDataOut[arrAfterUrgencyChecked[i].id].deleted = true
             }
 
             createTable();
@@ -212,7 +209,7 @@ const createTable = function () {
                 </td>`;
 
                 let textInsertDescription = document.querySelector(`.input_insert_description`);
-                textInsertDescription.value = initialData[arrAfterUrgencyChecked[i].id].description;
+                textInsertDescription.value = lsDataOut[arrAfterUrgencyChecked[i].id].description;
 
                 const buttonCancelInsertDescription = document.querySelector(`.button_cancel_insert_description`);
                 buttonCancelInsertDescription.addEventListener(`click`, () => {
@@ -223,16 +220,11 @@ const createTable = function () {
                 buttonSaveInsertDescription.addEventListener(`click`, () => {
                     trRowInsertDescription.remove();
 
-                    initialData[arrAfterUrgencyChecked[i].id].description = textInsertDescription.value;
-                    console.log(initialData);
+                    lsDataOut[arrAfterUrgencyChecked[i].id].description = textInsertDescription.value;
 
                     createTable();
                 })
-
-                
             }
-
-            
         })
     }
 }
